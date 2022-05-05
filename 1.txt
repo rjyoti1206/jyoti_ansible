@@ -1,0 +1,346 @@
+login as: root
+Authenticating with public key "hp@LAPTOP-F6C0KDM9"
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-54-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Apr 22 05:25:21 UTC 2022
+
+  System load:           0.0
+  Usage of /:            6.6% of 38.60GB
+  Memory usage:          28%
+  Swap usage:            0%
+  Processes:             111
+  Users logged in:       0
+  IPv4 address for ens3: 216.155.42.181
+  IPv6 address for ens3: 2a04:e00:12:1:f816:3eff:fe65:add3
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+5 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Thu Apr 21 09:15:07 2022 from 49.37.42.69
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls
+abc  inventory  snap  test  yamlfile
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# cd inventory/
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# ls
+hosts  test
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# cat hosts
+[prod]
+vm1
+vm2
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# cat test
+#we can collect the ip of machines add them manually,
+#But here filtering is not possible, so we can group the machine as per their requirement/usage.
+
+[web]
+192.168.0.1
+192.168.0.2
+
+[dev]
+system1.example.com
+system2.example.com
+
+[database]
+db1.example.com
+#we can range the machine if we have so many machines.
+db[2:8].example.com
+
+[dms]
+192.168.10.[1:10]
+
+
+[group:children]
+web
+dev
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# vi test
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# cat test
+#we can collect the ip of machines add them manually,
+#But here filtering is not possible, so we can group the machine as per their requirement/usage.
+
+[web]
+#master
+216.155.42.181
+#manage_node
+206.246.74.98
+
+#[dev]
+#system1.example.com
+#system2.example.com
+
+#[database]
+#db1.example.com
+#we can range the machine if we have so many machines.
+#db[2:8].example.com
+
+#[dms]
+#192.168.10.[1:10]
+
+
+#[group:children]
+#web
+#dev
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# vi test
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# cat test
+#we can collect the ip of machines add them manually,
+#But here filtering is not possible, so we can group the machine as per their requirement/usage.
+
+[web]
+#master
+216.155.42.181
+#manage_node1
+206.246.74.98
+#manage_node2
+104.200.136.238
+
+#[dev]
+#system1.example.com
+#system2.example.com
+
+#[database]
+#db1.example.com
+#we can range the machine if we have so many machines.
+#db[2:8].example.com
+
+#[dms]
+#192.168.10.[1:10]
+
+
+#[group:children]
+#web
+#dev
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# vi test
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# vi test
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# ls
+hosts  test
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# ansible web --list-hosts
+[WARNING]: Could not match supplied host pattern, ignoring: web
+[WARNING]: No hosts matched, nothing to do
+  hosts (0):
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# ## by default it went to default inventory, so we need to provide the path
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# pwd
+/root/inventory
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# ansible web --list-hosts -i test
+  hosts (2):
+    206.246.74.98
+    104.200.136.238
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory#
+root@jyotiranjan-vm-donotdelete:~/inventory# cd ..
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible web --list-hosts -i inventory/test
+  hosts (2):
+    206.246.74.98
+    104.200.136.238
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible dev --list-hosts -i inventory/test
+  hosts (3):
+    216.155.42.181
+    206.246.74.98
+    104.200.136.238
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible all --list-hosts -i inventory/test
+  hosts (23):
+    system1.example.com
+    system2.example.com
+    db1.example.com
+    db2.example.com
+    db3.example.com
+    db4.example.com
+    db5.example.com
+    db6.example.com
+    db7.example.com
+    db8.example.com
+    192.168.10.1
+    192.168.10.2
+    192.168.10.3
+    192.168.10.4
+    192.168.10.5
+    192.168.10.6
+    192.168.10.7
+    192.168.10.8
+    192.168.10.9
+    192.168.10.10
+    206.246.74.98
+    104.200.136.238
+    216.155.42.181
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible web:dev --list-hosts -i inventory/test
+  hosts (3):
+    206.246.74.98
+    104.200.136.238
+    216.155.42.181
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# vi inventory/test
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# # created a combined group with children [webdev:children]
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible webdev --list-hosts -i inventory/test
+  hosts (3):
+    206.246.74.98
+    104.200.136.238
+    216.155.42.181
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ll /etc/ansible/hosts
+-rw-r--r-- 1 root root 977 Apr  4 08:16 /etc/ansible/hosts
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ### to check the default inventory file path 1st nee to check the path of config file
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible --version
+ansible 2.9.6
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Mar 15 2022, 12:22:08) [GCC 9.4.0]
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ## how to create ansble.cfg file user specific instead of universal
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# # copy the ansible.cfg file to user specific home directory in hidden format
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# cp /etc/ansible/ansible.cfg /root/.ansible.cfg
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls -al /root
+total 92
+drwx------  8 root root  4096 Apr 22 10:19 .
+drwxr-xr-x 19 root root  4096 Apr  4 06:56 ..
+drwxr-xr-x  4 root root  4096 Apr  4 08:23 .ansible
+-rw-r--r--  1 root root 19985 Apr 22 10:19 .ansible.cfg
+-rw-------  1 root root  7062 Apr 21 08:33 .bash_history
+-rw-r--r--  1 root root  3106 Dec  5  2019 .bashrc
+drwx------  2 root root  4096 Apr  4 06:56 .cache
+-rw-r--r--  1 root root    56 Apr 12 09:50 .gitconfig
+-rw-r--r--  1 root root   161 Dec  5  2019 .profile
+drwx------  2 root root  4096 Apr  4 06:56 .ssh
+-rw-------  1 root root 11568 Apr 22 09:17 .viminfo
+-rw-r--r--  1 root root    27 Apr 12 10:35 abc
+drwxr-xr-x  2 root root  4096 Apr 22 09:17 inventory
+drwxr-xr-x  3 root root  4096 Apr  4 06:56 snap
+-rw-r--r--  1 root root    11 Apr 10 11:24 test
+drwxr-xr-x  2 root root  4096 Apr  6 11:14 yamlfile
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible --version
+ansible 2.9.6
+  config file = /root/.ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Mar 15 2022, 12:22:08) [GCC 9.4.0]
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible web --list-hosts
+[WARNING]: Could not match supplied host pattern, ignoring: web
+[WARNING]: No hosts matched, nothing to do
+  hosts (0):
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# vi .ansible.cfg
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls
+abc  inventory  snap  test  yamlfile
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# pwd
+/root
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible web --list-hosts
+  hosts (2):
+    206.246.74.98
+    104.200.136.238
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible dev --list-hosts
+  hosts (3):
+    216.155.42.181
+    206.246.74.98
+    104.200.136.238
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ansible web:dev --list-hosts
+  hosts (3):
+    206.246.74.98
+    104.200.136.238
+    216.155.42.181
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#

@@ -1,0 +1,226 @@
+login as: root
+Authenticating with public key "hp@LAPTOP-F6C0KDM9"
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-54-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Apr 26 09:14:33 UTC 2022
+
+  System load:           0.0
+  Usage of /:            6.7% of 38.60GB
+  Memory usage:          29%
+  Swap usage:            0%
+  Processes:             112
+  Users logged in:       0
+  IPv4 address for ens3: 216.155.42.181
+  IPv6 address for ens3: 2a04:e00:12:1:f816:3eff:fe65:add3
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+5 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Tue Apr 26 08:58:25 2022 from 117.198.24.248
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls .ssh
+authorized_keys  id_rsa  known_hosts
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls -al .ssh
+total 20
+drwx------ 2 root root 4096 Apr 26 09:12 .
+drwx------ 9 root root 4096 Apr 26 09:12 ..
+-rw------- 1 root root  969 Apr  4 06:56 authorized_keys
+-rw-r--r-- 1 root root  572 Apr 26 09:12 id_rsa
+-rw-r--r-- 1 root root  222 Apr 26 08:16 known_hosts
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# chmod 400 .ssh/id_rsa
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls -al
+total 100
+drwx------  9 root root  4096 Apr 26 09:12 .
+drwxr-xr-x 19 root root  4096 Apr  4 06:56 ..
+drwxr-xr-x  4 root root  4096 Apr  4 08:23 .ansible
+-rw-r--r--  1 root root 20019 Apr 22 10:23 .ansible.cfg
+-rw-------  1 root root  9295 Apr 26 09:13 .bash_history
+-rw-r--r--  1 root root  3106 Dec  5  2019 .bashrc
+drwx------  2 root root  4096 Apr  4 06:56 .cache
+-rw-r--r--  1 root root    56 Apr 12 09:50 .gitconfig
+-rw-r--r--  1 root root   161 Dec  5  2019 .profile
+drwx------  2 root root  4096 Apr 26 09:12 .ssh
+-rw-------  1 root root 10789 Apr 26 09:12 .viminfo
+-rw-r--r--  1 root root    27 Apr 12 10:35 abc
+drwxr-xr-x  2 root root  4096 Apr 25 08:51 ansible_practice
+drwxr-xr-x  2 root root  4096 Apr 22 09:17 inventory
+drwxr-xr-x  3 root root  4096 Apr  4 06:56 snap
+-rw-r--r--  1 root root    11 Apr 10 11:24 test
+drwxr-xr-x  2 root root  4096 Apr  6 11:14 yamlfile
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ls -al .ssh
+total 20
+drwx------ 2 root root 4096 Apr 26 09:12 .
+drwx------ 9 root root 4096 Apr 26 09:12 ..
+-rw------- 1 root root  969 Apr  4 06:56 authorized_keys
+-r-------- 1 root root  572 Apr 26 09:12 id_rsa
+-rw-r--r-- 1 root root  222 Apr 26 08:16 known_hosts
+root@jyotiranjan-vm-donotdelete:~# ssh root@206.246.74.98
+Load key "/root/.ssh/id_rsa": invalid format
+root@206.246.74.98: Permission denied (publickey).
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# vi .ssh/id_rsa
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# vi .ssh/id_rsa
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ssh root@206.246.74.98
+Welcome to Ubuntu 21.10 (GNU/Linux 5.13.0-20-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Apr 26 09:18:30 UTC 2022
+
+  System load:           0.0
+  Usage of /:            5.0% of 38.60GB
+  Memory usage:          22%
+  Swap usage:            0%
+  Processes:             98
+  Users logged in:       1
+  IPv4 address for ens3: 206.246.74.98
+  IPv6 address for ens3: 2a04:e00:10:1:f816:3eff:fe9a:7b5d
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+45 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Tue Apr 26 08:59:56 2022 from 117.198.24.248
+root@jyoti-ranjan-1-donotdelete:~#
+root@jyoti-ranjan-1-donotdelete:~#
+root@jyoti-ranjan-1-donotdelete:~# ssh root@104.200.136.238
+The authenticity of host '104.200.136.238 (104.200.136.238)' can't be established.
+ECDSA key fingerprint is SHA256:4Ax0PnW/avPxbBb3ZwvMPH8FfqNHIlJHaw86FxDJKVs.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '104.200.136.238' (ECDSA) to the list of known hosts.
+root@104.200.136.238: Permission denied (publickey).
+root@jyoti-ranjan-1-donotdelete:~#
+root@jyoti-ranjan-1-donotdelete:~#
+root@jyoti-ranjan-1-donotdelete:~#
+logout
+Connection to 206.246.74.98 closed.
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# ssh root@104.200.136.238
+The authenticity of host '104.200.136.238 (104.200.136.238)' can't be established.
+ECDSA key fingerprint is SHA256:4Ax0PnW/avPxbBb3ZwvMPH8FfqNHIlJHaw86FxDJKVs.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '104.200.136.238' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-54-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Apr 26 09:54:48 UTC 2022
+
+  System load:           0.0
+  Usage of /:            3.4% of 57.98GB
+  Memory usage:          16%
+  Swap usage:            0%
+  Processes:             108
+  Users logged in:       1
+  IPv4 address for ens3: 104.200.136.238
+  IPv6 address for ens3: 2607:f7a0:c:7:f816:3eff:fe1c:c35f
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+114 updates can be installed immediately.
+1 of these updates is a security update.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Tue Apr 26 09:00:41 2022 from 117.198.24.248
+root@jyoti-ranjan-2gb-sea1-1:~#
+root@jyoti-ranjan-2gb-sea1-1:~#
+root@jyoti-ranjan-2gb-sea1-1:~# logout
+Connection to 104.200.136.238 closed.
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~#
+root@jyotiranjan-vm-donotdelete:~# cd .ssh
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh# pwd
+/root/.ssh
+root@jyotiranjan-vm-donotdelete:~/.ssh# ls
+authorized_keys  id_rsa  known_hosts
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh# ssh root@206.246.74.98
+Welcome to Ubuntu 21.10 (GNU/Linux 5.13.0-20-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Apr 26 10:41:06 UTC 2022
+
+  System load:           0.0
+  Usage of /:            5.0% of 38.60GB
+  Memory usage:          22%
+  Swap usage:            0%
+  Processes:             96
+  Users logged in:       1
+  IPv4 address for ens3: 206.246.74.98
+  IPv6 address for ens3: 2a04:e00:10:1:f816:3eff:fe9a:7b5d
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+45 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Tue Apr 26 09:18:30 2022 from 216.155.42.181
+root@jyoti-ranjan-1-donotdelete:~#
+logout
+Connection to 206.246.74.98 closed.
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh#
+root@jyotiranjan-vm-donotdelete:~/.ssh#
